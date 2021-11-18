@@ -12,9 +12,6 @@ import { Link } from 'react-router-dom'
 
 const Explor = ({explor}) => {
     const {_id,title,description,image,price} = explor;
-  //   const [open, setOpen] = React.useState(false);
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
     return (
       <>
         <Grid item xs={12} sm={12} md={4}>
@@ -36,18 +33,14 @@ const Explor = ({explor}) => {
           <Typography gutterBottom variant="h6" component="div">
             Price: {price}
           </Typography>
-          <Link to={`/order/${_id}`}><Button sx={{bgcolor:"blueviolet",color:"white",":hover":{
+          <Link style={{ textDecoration: 'none' }} to={`/order/${_id}`}><Button sx={{bgcolor:"blueviolet",color:"white",":hover":{
        backgroundColor: "rebeccapurple",
     }}}>Buy Now</Button></Link>
         </CardContent>
       </CardActionArea>
     </Card>  
         </Grid>
-        {/* <BuyModal
-        explor={explor}
-          open={open}
-          handleClose={handleClose}>
-        </BuyModal> */}
+        
         </>
     );
 };

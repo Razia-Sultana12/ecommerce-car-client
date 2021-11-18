@@ -10,6 +10,7 @@ import { CardActionArea } from '@mui/material';
 
 
 
+
 const Car = ({car}) => {
     const {_id,title,description,image,price} = car;
   //   const [open, setOpen] = React.useState(false);
@@ -36,7 +37,7 @@ const Car = ({car}) => {
           <Typography gutterBottom variant="h6" component="div">
             Price: {price}
           </Typography>
-          <Link to={`/order/${_id}`}><Button sx={{bgcolor:"blueviolet",color:"white",":hover":{
+          <Link style={{ textDecoration: 'none' }} to={`/order/${_id}`}><Button sx={{bgcolor:"blueviolet",color:"white",":hover":{
        backgroundColor: "rebeccapurple",
     }}}>Buy Now</Button></Link>
         </CardContent>

@@ -23,6 +23,7 @@ import Order from './Components/Pages/Explore/Order/Order';
 
 
 import Review from './Components/Pages/DashBoard/NormalUser/Review/Review';
+import NotFound from './Components/Pages/NotFound/NotFound';
 
 
 function App() {
@@ -37,13 +38,12 @@ function App() {
     <Route path="/home">
       <Home></Home>
     </Route>
-    <Route path="/dashboard">
+    <PrivateRoute path="/dashboard">
       <DashBoard></DashBoard>
-    </Route>
+    </PrivateRoute>
     <Route path='/review'>
       <Review></Review>
     </Route>
-    
     <PrivateRoute path="/explore">
       <Explore></Explore>
     </PrivateRoute>
@@ -55,6 +55,9 @@ function App() {
     </Route>
     <Route path="/register">
       <Register></Register>
+    </Route>
+    <Route path="*">
+      <NotFound></NotFound>
     </Route>
    
 

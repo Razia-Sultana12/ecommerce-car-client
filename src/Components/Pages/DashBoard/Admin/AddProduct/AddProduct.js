@@ -13,7 +13,7 @@ const AddProduct = () => {
       axios.post("http://localhost:5000/cars",data)
         .then((res) => {
           if(res.data.insertedId){
-            alert('Congrats,You have added a new destination successfully!');
+            alert('Congrats,You have added a new product successfully!');
             reset();
           }
         })

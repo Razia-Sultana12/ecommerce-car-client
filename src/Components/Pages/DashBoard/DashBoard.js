@@ -37,6 +37,7 @@ import Pay from './NormalUser/Pay/Pay';
 import ManageAllOrders from './Admin/ManageAllOrders/ManageAllOrders';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
 import { Logout } from '@mui/icons-material';
+import About from '../Home/About/About';
 
 const drawerWidth = 200;
 
@@ -53,23 +54,31 @@ function DashBoard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Link to='/home'><Button color='inherit'>Home</Button></Link>
+            <Link style={{ textDecoration: 'none' }} to='/home'><Button color='inherit'>Home</Button></Link>
             {!admin && <Box>
-            <Link to={`${url}/myorders`}><Button color="inherit">My Orders</Button></Link>
-            <Link to={`${url}/pay`}><Button color="inherit">Payment</Button></Link>
-            <Link to={`${url}/review`}><Button color="inherit">Review</Button></Link></Box>}
+            <Divider />
+            <Link style={{ textDecoration: 'none' }} to={`${url}/myorders`}><Button color="inherit">My Orders</Button></Link>
+            <Divider />
+            <Link style={{ textDecoration: 'none' }} to={`${url}/pay`}><Button color="inherit">Payment</Button></Link>
+            <Divider />
+            <Link style={{ textDecoration: 'none' }} to={`${url}/review`}><Button color="inherit">Review</Button></Link></Box>}
             {admin && <Box>
-                <Link to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
-            <Link to={`${url}/manageProducts`}><Button color="inherit">Manage Products</Button></Link>
-            <Link to={`${url}/manageAllOrders`}><Button color="inherit">Manage All Orders</Button></Link>
-            <Link to={`${url}/createAdmin`}><Button color="inherit">Make Admin</Button></Link>
+                <Divider />
+                <Link style={{ textDecoration: 'none' }} to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
+                <Divider />
+            <Link style={{ textDecoration: 'none' }} to={`${url}/manageProducts`}><Button color="inherit">Manage Products</Button></Link>
+            <Divider />
+            <Link style={{ textDecoration: 'none' }} to={`${url}/manageAllOrders`}><Button color="inherit">Manage All Orders</Button></Link>
+            <Divider />
+            <Link style={{ textDecoration: 'none' }} to={`${url}/createAdmin`}><Button color="inherit">Make Admin</Button></Link>
                 </Box>}
+                <Divider />
                 <Button onClick={logout} color="inherit">LogOut <Logout /></Button>
             
             
             
              
-            <List>
+            {/* <List>
                 {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
                     <ListItem button key={text}>
                         <ListItemIcon>
@@ -78,7 +87,7 @@ function DashBoard(props) {
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}
-            </List>
+            </List> */}
         </div>
     );
 
@@ -145,6 +154,7 @@ function DashBoard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
+                <About></About>
 
                 <Switch>
                 <AdminRoute path={`${path}/createAdmin`}>
