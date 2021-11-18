@@ -8,6 +8,8 @@ import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
 import car from '../../../flaticons/car-service.png';
 import useAuth from '../../../../hooks/useAuth';
+import { Logout } from '@mui/icons-material';
+
 
 
 const Header = () => {
@@ -33,7 +35,7 @@ const Header = () => {
           <Link to="/explore"><Button color="inherit" sx={{textDecoration:'none',color:'white'}}>Explore</Button></Link>
           {
             user?.email?
-            <Button onClick={logout} color="inherit">LogOut</Button>:
+            <Button onClick={logout} color="inherit">LogOut <Logout /></Button>:
             <Link to="/login"><Button color="inherit" sx={{textDecoration:'none',color:'white'}}>Login</Button></Link>
           }
         </Toolbar>

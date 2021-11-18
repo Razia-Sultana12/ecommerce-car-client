@@ -1,11 +1,14 @@
 import React from 'react';
-import { Button, Container, Grid, TextField, Typography } from '@mui/material';
+import { Button, Container, Grid, TextField, Typography, CircularProgress,Alert} from '@mui/material';
 import  { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import loginbg from '../../flaticons/bglog.jpg'
+import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
-    const [loginData,setLoginData]=useState({})
+    const [loginData,setLoginData]=useState({});
+
+    const { user, registerUser, isLoading, authError } = useAuth();
     const handleOnChange=e=>{
         const field=e.target.name;
         const value=e.target.value;
@@ -19,22 +22,23 @@ const Register = () => {
             alert("Password didn't match");
             return
         }
+        registerUser(loginData.email, loginData.password);
         e.preventDefault();
     }
     return (
         <div>
             <Grid container spacing={2}>
-            <Grid item xs={6} md={6}>
+            <Grid item xs={12} md={6}>
             <img sx={{width:"100%"}} src={loginbg} alt="" />  
   </Grid>
-  <Grid sx={{mt:8}} item xs={6} md={6}>
+  <Grid sx={{mt:8}} item xs={12} md={6}>
   <Typography variant="h4" gutterBottom color="info.main">
         Please Register
     </Typography>
-    <form onSubmit={handleLoginSubmit}>
+    {!isLoading && <form onSubmit={handleLoginSubmit}>
     
         <TextField
-          label="Your Name"
+          label="Name"
           name="name"
           onChange={handleOnChange}
           sx={{width:'90%' ,m:1}}
@@ -62,7 +66,7 @@ const Register = () => {
           size="small"
         />
         <TextField
-          label="Reenter Your Password"
+          label="Re-enter Your Password"
           name="password2"
           type="password"
           onChange={handleOnChange}
@@ -71,10 +75,13 @@ const Register = () => {
           defaultValue=""
           size="small"
         />
-        <Button onChange={handleLoginSubmit} sx={{ bgcolor: 'info.main' ,color:"white",m:1 ,":hover":{bgcolor:"info.main"}}}>Register</Button>
+        <Button type="submit" sx={{ bgcolor: 'info.main' ,color:"white",m:1 ,":hover":{bgcolor:"info.main"}}}>Register</Button>
         <NavLink style={{textDecoration:"none",display:'block'}} to="/login"><Button>Already Registered?Please Login</Button></NavLink>
 
-    </form>
+    </form>}
+    {isLoading && <CircularProgress />}
+    {user?.email && <Alert severity="success">Congrats!You have successfully registered!</Alert>}
+    {authError && <Alert severity="error">{authError}</Alert>}
   </Grid>
      
   </Grid> 

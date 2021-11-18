@@ -1,17 +1,17 @@
 import { Button, Grid } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-import { Link } from 'react-router-dom'
 
 
 
-const Explor = ({explor}) => {
-    const {_id,title,description,image,price} = explor;
+const Car = ({car}) => {
+    const {_id,title,description,image,price} = car;
   //   const [open, setOpen] = React.useState(false);
   // const handleOpen = () => setOpen(true);
   // const handleClose = () => setOpen(false);
@@ -44,7 +44,7 @@ const Explor = ({explor}) => {
     </Card>  
         </Grid>
         {/* <BuyModal
-        explor={explor}
+        car={car}
           open={open}
           handleClose={handleClose}>
         </BuyModal> */}
@@ -52,7 +52,7 @@ const Explor = ({explor}) => {
     );
 };
 
-export default Explor;
+export default Car;
 
 
 
