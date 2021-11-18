@@ -13,9 +13,7 @@ import { CardActionArea } from '@mui/material';
 
 const Car = ({car}) => {
     const {_id,title,description,image,price} = car;
-  //   const [open, setOpen] = React.useState(false);
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
+  
     return (
       <>
         <Grid item xs={12} sm={12} md={4}>
@@ -44,11 +42,7 @@ const Car = ({car}) => {
       </CardActionArea>
     </Card>  
         </Grid>
-        {/* <BuyModal
-        car={car}
-          open={open}
-          handleClose={handleClose}>
-        </BuyModal> */}
+        
         </>
     );
 };

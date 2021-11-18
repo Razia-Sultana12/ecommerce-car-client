@@ -14,7 +14,7 @@ import ReviewUi from '../ReviewUi/ReviewUi';
 const ReviewsUi = () => {
     const [reviewsUi,setReviewsUi]=useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://fierce-peak-59128.herokuapp.com/reviews')
         .then(res => res.json())
         .then(data => setReviewsUi(data));
     },[])

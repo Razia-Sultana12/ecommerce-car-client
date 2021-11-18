@@ -12,7 +12,7 @@ import Explor from './Explor/Explor';
 const Explore = () => {
     const [explore,setExplore]=useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://fierce-peak-59128.herokuapp.com/cars')
         .then(res => res.json())
         .then(data => setExplore(data));
     },[])

@@ -16,7 +16,7 @@ const Order = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-      fetch(`http://localhost:5000/cars/${orderId}`)
+      fetch(`https://fierce-peak-59128.herokuapp.com/cars/${orderId}`)
           .then(res => res.json())
           .then(data=>setPurchase(data))
   }, [orderId]);
@@ -26,7 +26,7 @@ const Order = () => {
   const { register, handleSubmit} = useForm();
       const onSubmit = data => {
         
-           fetch("http://localhost:5000/orders", {
+           fetch("https://fierce-peak-59128.herokuapp.com/orders", {
                  method: "POST",
                  headers: { "content-type": "application/json" },
                  body: JSON.stringify(data),

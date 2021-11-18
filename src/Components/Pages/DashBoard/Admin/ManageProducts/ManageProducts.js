@@ -13,12 +13,12 @@ const ManageProducts = () => {
     const [products,setProducts]=useState([]);
     const {_id,title,description,image,price} = products;
     useEffect(() => {
-        fetch('http://localhost:5000/cars')
+        fetch('https://fierce-peak-59128.herokuapp.com/cars')
         .then(res => res.json())
         .then(data => setProducts(data));
     },[]);
     const handleDelete = id => {
-        const url = `http://localhost:5000/cars/${id}`;
+        const url = `https://fierce-peak-59128.herokuapp.com/cars/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

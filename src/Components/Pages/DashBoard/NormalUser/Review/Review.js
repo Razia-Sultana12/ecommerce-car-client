@@ -12,7 +12,7 @@ const Review = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
       console.log(data);
-      axios.post("http://localhost:5000/reviews",data)
+      axios.post("https://fierce-peak-59128.herokuapp.com/reviews",data)
         .then(res => {
           if(res.data.insertedId){
             alert('Congrats,Review Added successfully!');
