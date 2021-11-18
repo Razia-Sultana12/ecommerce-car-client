@@ -13,9 +13,9 @@ const OurService = () => {
         backgroundImage: `url(${bgimage})`,
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover',
-        height:"100vh",
-        marginTop: '15px',
-        marginBottom: '35px'
+        // height:"100vh",
+        // marginTop: '15px',
+        // marginBottom: '35px'
     }
     return (
         <div style={bannerbg}>

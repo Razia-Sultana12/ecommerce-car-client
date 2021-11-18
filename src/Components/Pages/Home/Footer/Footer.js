@@ -18,7 +18,7 @@ const Footer = () => {
       <div style={aboutbg}> 
       <Container>
       <Box sx={{ width: '100%' }}>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Grid my='10px' container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={12} md={3}>
           <Typography variant='h5' color='white'>About</Typography>
           <Typography color="lightgray">We provide best services in the city.Our products are always affordable for our users.</Typography>
@@ -46,6 +46,7 @@ const Footer = () => {
         
       </Grid>
     </Box>
+    <Typography color='lightgray' my='10px' textAlign='center'>Copyright © Carplanet. All rights reserved. Legal notice</Typography>
     </Container>
     </div>
    

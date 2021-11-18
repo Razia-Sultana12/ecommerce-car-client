@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import car from '../../../flaticons/car-service.png';
 import useAuth from '../../../../hooks/useAuth';
 import { Logout } from '@mui/icons-material';
+import { Avatar } from '@mui/material';
 
 
 
@@ -37,8 +38,11 @@ const Header = () => {
             user?.email?
             <Button onClick={logout} color="inherit">LogOut <Logout /></Button>:
             <Link to="/login"><Button color="inherit" sx={{textDecoration:'none',color:'white'}}>Login</Button></Link>
-          }
+          } 
+          {user.email &&
+           <Avatar alt="Remy Sharp" src={user.photoURL} />   }
         </Toolbar>
+       
       </AppBar>
     </Box>
     );
